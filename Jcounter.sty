@@ -7,6 +7,8 @@
 \ProvidesPackage{jcounter}[2018/07/06 v0.1]
 \def\mk@pkgname{jcounter}
 
+
+%漢数字%%%%%%%%%%%%%%%%%%
 \def\Jkan@kurai@iti#1{%
 \newcount\kan@suji
 \newcount\kan@sen
@@ -292,3 +294,43 @@
 \Jkan@kurai@man{\the\kan@oku@amari@iti}}
 
 \newcommand\jkansuji[1]{\Jkan@kurai@oku{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%全角数字%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\count@\z@
+
+\@tfor\temp:=０１２３４５６７８９\do{%
+\expandafter\edef\csname zen@\the\count@\endcsname{\temp}%
+\advance\count@\@ne
+}
+
+\DeclareRobustCommand{\zenkakusuji}[1]{%
+\edef\@arg{#1}%
+\let\@temp\@empty
+\expandafter\@tfor\expandafter\Num\expandafter:\expandafter=\@arg\do{\edef\@temp{\@temp\@nameuse{zen@\Num}}}%
+\@temp
+}
+
+%イロハ%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\iroha#1{%
+  \ifcase#1 \or イ\or ロ\or ハ\or ニ\or ホ\or ヘ\or ト
+\or チ\or リ\or ヌ\or ル\or ヲ\or ワ\or カ\or ヨ
+\or タ\or レ\or ソ\or ツ\or ネ\or ナ\or ラ\or ム
+\or ウ\or ヰ\or ノ\or オ\or ク\or ヤ\or マ
+\or ケ\or フ\or コ\or エ\or テ
+\or ア\or サ\or キ\or ユ\or メ\or ミ\or シ\or ヱ\or ヒ\or モ\or セ\or ス
+\or ン \else\@ctrerr\fi\relax}
+
+%いろは%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\iroha#1{%
+  \ifcase#1 \or い\or ろ\or は\or に\or ほ\or へ\or と
+\or ち\or り\or ぬ\or る\or を\or わ\or か\or よ
+\or た\or れ\or そ\or つ\or ね\or な\or ら\or む
+\or う\or ゐ\or の\or お\or く\or や\or ま\or け\or ふ\or こ\or え\or て
+\or あ\or さ\or き\or ゆ\or め\or み\or し\or ゑ\or ひ\or も\or せ\or す
+\or ん \else\@ctrerr\fi\relax}
+%--------------------------------------- all done
+\endinput
+%% EOF
