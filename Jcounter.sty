@@ -1,0 +1,285 @@
+\def\Jkan@kurai@iti#1{%
+\newcount\kan@suji
+\newcount\kan@sen
+\newcount\kan@sen@sen
+\newcount\kan@hyaku
+\newcount\kan@hyaku@hyaku
+\newcount\kan@juu
+\newcount\kan@juu@juu
+\newcount\kan@iti
+\newcount\kan@iti@iti
+%%%%%%%%%%
+%%%%%%%%%%
+\kan@suji = #1
+\kan@sen = #1
+\kan@sen@sen = #1
+\divide\kan@sen by 1000
+\divide\kan@sen@sen by 1000
+\multiply\kan@sen@sen by 1000
+\advance\kan@suji by -\kan@sen@sen
+\ifcase\kan@sen\or
+千\or
+二千\or
+三千\or
+四千\or
+五千\or
+六千\or
+七千\or
+八千\or
+九千\or\else\relax\fi
+%%%%%%%%%
+%%%%%%%%%
+\kan@hyaku = \kan@suji
+\kan@hyaku@hyaku = \kan@suji
+\divide\kan@hyaku by 100
+\divide\kan@hyaku@hyaku by 100
+\multiply\kan@hyaku@hyaku by 100
+\advance\kan@suji by -\kan@hyaku@hyaku
+\ifcase\kan@hyaku \or
+百\or
+二百\or
+三百\or
+四百\or
+五百\or
+六百\or
+七百\or
+八百\or
+九百\or\else\relax\fi
+%%%%%%%%%
+%%%%%%%%%
+\kan@juu = \kan@suji
+\kan@juu@juu = \kan@suji
+\divide\kan@juu by 10
+\divide\kan@juu@juu by 10
+\multiply\kan@juu@juu by 10
+\advance\kan@suji by -\kan@juu@juu
+\ifcase\kan@juu \or
+十\or
+二十\or
+三十\or
+四十\or
+五十\or
+六十\or
+七十\or
+八十\or
+九十\or\else\relax\fi%
+%%%%%%%%%
+%%%%%%%%%
+\kan@iti = \kan@suji
+\kan@iti@iti = \kan@suji
+\divide\kan@iti by 1
+\divide\kan@iti@iti by 1
+\multiply\kan@iti@iti by 1
+\advance\kan@suji by -\kan@iti@iti
+\ifcase\kan@iti \or
+一\or
+二\or
+三\or
+四\or
+五\or
+六\or
+七\or
+八\or
+九\or\else\relax\fi}
+
+\def\Jkan@kurai@man#1{%
+\newcount\kan@man@syou
+\newcount\kan@man@amari@iti
+\newcount\kan@man@suji
+\newcount\kan@man@suji@suji
+\newcount\kan@man@sen
+\newcount\kan@man@sen@sen
+\newcount\kan@man@hyaku
+\newcount\kan@man@hyaku@hyaku
+\newcount\kan@man@juu
+\newcount\kan@man@juu@juu
+\newcount\kan@man@iti
+\newcount\kan@man@iti@iti
+%%%%%%%%%%
+%%%%%%%%%%
+\kan@man@suji = #1
+\kan@man@amari@iti = #1
+\kan@man@suji@suji = #1
+\divide\kan@man@suji by 10000
+\divide\kan@man@suji@suji by 10000
+\multiply\kan@man@suji@suji by 10000
+\advance\kan@man@amari@iti by -\kan@man@suji@suji
+%%%%%%%%%%
+\kan@man@sen = \kan@man@suji
+\kan@man@sen@sen = \kan@man@suji
+%%%%%%%%%%
+\divide\kan@man@sen by 1000
+\divide\kan@man@sen@sen by 1000
+\multiply\kan@man@sen@sen by 1000
+\advance\kan@man@suji by -\kan@man@sen@sen
+\advance\kan@man@syou by \kan@man@sen
+\ifcase\kan@man@sen \or
+千\or
+二千\or
+三千\or
+四千\or
+五千\or
+六千\or
+七千\or
+八千\or
+九千\or\else\relax\fi
+%%%%%%%%%
+%%%%%%%%%
+\kan@man@hyaku = \kan@man@suji
+\kan@man@hyaku@hyaku = \kan@man@suji
+\divide\kan@man@hyaku by 100
+\divide\kan@man@hyaku@hyaku by 100
+\multiply\kan@man@hyaku@hyaku by 100
+\advance\kan@man@suji by -\kan@man@hyaku@hyaku
+\advance\kan@man@syou by \kan@man@hyaku
+\ifcase\kan@man@hyaku \or
+百\or
+二百\or
+三百\or
+四百\or
+五百\or
+六百\or
+七百\or
+八百\or
+九百\or\else\relax\fi
+%%%%%%%%%
+%%%%%%%%%
+\kan@man@juu = \kan@man@suji
+\kan@man@juu@juu = \kan@man@suji
+\divide\kan@man@juu by 10
+\divide\kan@man@juu@juu by 10
+\multiply\kan@man@juu@juu by 10
+\advance\kan@man@suji by -\kan@man@juu@juu
+\advance\kan@man@syou by \kan@man@juu
+\ifcase\kan@man@juu \or
+十\or
+二十\or
+三十\or
+四十\or
+五十\or
+六十\or
+七十\or
+八十\or
+九十\or\else\relax\fi%
+%%%%%%%%%
+%%%%%%%%%
+\kan@man@iti = \kan@man@suji
+\kan@man@iti@iti = \kan@man@suji
+\divide\kan@man@iti by 1
+\divide\kan@man@iti@iti by 1
+\multiply\kan@man@iti@iti by 1
+\advance\kan@man@suji by -\kan@man@iti@iti
+\advance\kan@man@syou by \kan@man@iti
+\ifcase\kan@man@iti \ifnum\kan@man@syou = 0\else 万\fi\or
+一万\or
+二万\or
+三万\or
+四万\or
+五万\or
+六万\or
+七万\or
+八万\or
+九万\or\else\relax\fi%
+\Jkan@kurai@iti{\the\kan@man@amari@iti}}
+
+\def\Jkan@kurai@oku#1{%
+\newcount\kan@oku@syou
+\newcount\kan@oku@amari@iti
+\newcount\kan@oku@suji
+\newcount\kan@oku@suji@suji
+\newcount\kan@oku@sen
+\newcount\kan@oku@sen@sen
+\newcount\kan@oku@hyaku
+\newcount\kan@oku@hyaku@hyaku
+\newcount\kan@oku@juu
+\newcount\kan@oku@juu@juu
+\newcount\kan@oku@iti
+\newcount\kan@oku@iti@iti
+%%%%%%%%%%
+%%%%%%%%%%
+\kan@oku@suji = #1
+\kan@oku@amari@iti = #1
+\kan@oku@suji@suji = #1
+\divide\kan@oku@suji by 100000000
+\divide\kan@oku@suji@suji by 100000000
+\multiply\kan@oku@suji@suji by 100000000
+\advance\kan@oku@amari@iti by -\kan@oku@suji@suji
+%%%%%%%%%%
+\kan@oku@sen = \kan@oku@suji
+\kan@oku@sen@sen = \kan@oku@suji
+%%%%%%%%%%
+\divide\kan@oku@sen by 1000
+\divide\kan@oku@sen@sen by 1000
+\multiply\kan@oku@sen@sen by 1000
+\advance\kan@oku@suji by -\kan@oku@sen@sen
+\advance\kan@oku@syou by \kan@oku@sen
+\ifcase\kan@oku@sen \or
+千\or
+二千\or
+三千\or
+四千\or
+五千\or
+六千\or
+七千\or
+八千\or
+九千\or\else\relax\fi
+%%%%%%%%%
+%%%%%%%%%
+\kan@oku@hyaku = \kan@oku@suji
+\kan@oku@hyaku@hyaku = \kan@oku@suji
+\divide\kan@oku@hyaku by 100
+\divide\kan@oku@hyaku@hyaku by 100
+\multiply\kan@oku@hyaku@hyaku by 100
+\advance\kan@oku@suji by -\kan@oku@hyaku@hyaku
+\advance\kan@oku@syou by \kan@oku@hyaku
+\ifcase\kan@oku@hyaku \or
+百\or
+二百\or
+三百\or
+四百\or
+五百\or
+六百\or
+七百\or
+八百\or
+九百\or\else\relax\fi
+%%%%%%%%%
+%%%%%%%%%
+\kan@oku@juu = \kan@oku@suji
+\kan@oku@juu@juu = \kan@oku@suji
+\divide\kan@oku@juu by 10
+\divide\kan@oku@juu@juu by 10
+\multiply\kan@oku@juu@juu by 10
+\advance\kan@oku@suji by -\kan@oku@juu@juu
+\advance\kan@oku@syou by \kan@oku@juu
+\ifcase\kan@oku@juu \or
+十\or
+二十\or
+三十\or
+四十\or
+五十\or
+六十\or
+七十\or
+八十\or
+九十\or\else\relax\fi%
+%%%%%%%%%
+%%%%%%%%%
+\kan@oku@iti = \kan@oku@suji
+\kan@oku@iti@iti = \kan@oku@suji
+\divide\kan@oku@iti by 1
+\divide\kan@oku@iti@iti by 1
+\multiply\kan@oku@iti@iti by 1
+\advance\kan@oku@suji by -\kan@oku@iti@iti
+\advance\kan@oku@syou by \kan@oku@iti
+\ifcase\kan@oku@iti \ifnum\kan@oku@syou = 0 \else 億\fi\or
+一億\or
+二億\or
+三億\or
+四億\or
+五億\or
+六億\or
+七億\or
+八億\or
+九億\or\else\relax\fi%
+\Jkan@kurai@man{\the\kan@oku@amari@iti}}
+
+\newcommand\jkansuji[1]{\Jkan@kurai@oku{#1}}
