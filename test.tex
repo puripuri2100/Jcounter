@@ -1,11 +1,12 @@
 \documentclass{article}
 \usepackage{luatexja}
+\usepackage{here}
 \usepackage{jcounter}
 \begin{document}
 \section{漢数字}
 \verb|\jkansuji{算用数字}|で行うことができる。最大値は\LaTeX{}が扱える最大値の関係で\jkansuji{2147483647}となっている。実用上支障が出ることは少ないと思われる。
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
     \begin{tabular}{ll}
         入力&出力\\\hline
@@ -17,7 +18,7 @@
 \section{全角数字}
 \verb|\jzenkakusuji{算用数字}|で行うことができる。最大値の制限はないはず。
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
     \begin{tabular}{ll}
         入力&出力\\\hline
@@ -33,7 +34,7 @@
 \subsection{カタカナ}
 \verb|\jiroha{算用数字}|で行うことができる。最大値は48。「ン」までありますが、異論は認めません。
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
     \begin{tabular}{ll}
         入力&出力\\\hline
@@ -45,7 +46,7 @@
 \subsection{ひらがな}
 \verb|\jIROHA{算用数字}|で行うことができる。最大値は48。「ん」までありますが、異論は認めません。
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
     \begin{tabular}{ll}
         入力&出力\\\hline
@@ -57,7 +58,7 @@
 \section{カタカナ}
 \verb|\jkatakana{算用数字}|で行うことができる。最大値は45。
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
     \begin{tabular}{ll}
         入力&出力\\\hline
@@ -69,7 +70,7 @@
 \section{ひらがな}
 \verb|\jhiragana{算用数字}|で行うことができる。最大値は45。
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
     \begin{tabular}{ll}
         入力&出力\\\hline
@@ -81,12 +82,24 @@
 \section{甲乙}
 \verb|\jkouotu{算用数字}|で行うことができる。最大値は10。
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
     \begin{tabular}{ll}
         入力&出力\\\hline
         \verb|\jkouotu{1}|&\jkouotu{1}\\
         \verb|\jkouotu{10}|&\jkouotu{10}
+    \end{tabular}
+\end{table}
+
+\section{干支}
+\verb|\jzyunisi{算用数字}|で行うことができる。最大値は12。
+
+\begin{table}[H]
+\centering
+    \begin{tabular}{ll}
+        入力&出力\\\hline
+        \verb|\jzyunisi{1}|&\jzyunisi{1}\\
+        \verb|\jzyunisi{10}|&\jzyunisi{10}
     \end{tabular}
 \end{table}
 \end{document}
