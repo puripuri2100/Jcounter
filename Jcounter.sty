@@ -348,10 +348,32 @@
   \ifcase#1 \or 甲\or 乙\or 丙\or 丁\or 戊\or 己\or 庚\or 辛
   \or 壬\or 癸\else\@ctrerr\fi\relax}
 
-  %--------------------------------------- 干支
+%--------------------------------------- 十二支
 \def\kan@zyunisi#1{%
   \ifcase#1 \or 子\or 丑\or 寅\or 卯\or 辰\or 巳\or 午\or 未
   \or 申\or 酉\or 戌\or 亥\else\@ctrerr\fi\relax}
+
+%--------------------------------------- 干支
+\def\kan@eto#1{%
+\newcount\kan@eto@suji@juu
+\newcount\kan@eto@suji@juuni
+\newcount\kan@eto@juu
+\newcount\kan@eto@juuni
+\kan@eto@suji@juu = #1
+\kan@eto@suji@juuni = #1
+\kan@eto@juu = #1
+\kan@eto@juuni = #1
+%\divide\kan@eto@juu by 10
+\divide\kan@eto@suji@juu by 10
+\multiply\kan@eto@suji@juu by 10
+\advance\kan@eto@juu by -\kan@eto@suji@juu
+\divide\kan@eto@suji@juuni by 12
+\multiply\kan@eto@suji@juuni by 12
+\advance\kan@eto@juuni by -\kan@eto@suji@juuni
+\ifcase\kan@eto@juu  癸\or 甲\or 乙\or 丙\or 丁\or 戊\or 己\or 庚\or 辛
+\or 壬\else\@ctrerr\fi\relax
+\ifcase\kan@eto@juuni 亥\or 子\or 丑\or 寅\or 卯\or 辰\or 巳\or 午\or 未
+\or 申\or 酉\or 戌\else\@ctrerr\fi\relax}
 
 
 \newcommand*{\jkansuji}[1]{\Jkan@kurai@oku{#1}}
@@ -362,6 +384,7 @@
 \newcommand*{\jhiragana}[1]{\kan@hiragana{#1}}
 \newcommand*{\jkouotu}[1]{\kan@kouotu{#1}}
 \newcommand*{\jzyunisi}[1]{\kan@zyunisi{#1}}
+\newcommand*{\jeto}[1]{\kan@eto{#1}}
 
 %--------------------------------------- all done
 \endinput
