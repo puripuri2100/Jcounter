@@ -333,7 +333,15 @@
 \or ク\or ケ\or コ\or サ\or シ\or ス\or セ\or ソ
 \or タ\or チ\or ツ\or テ\or ト\or ナ\or ニ\or ヌ
 \or ネ\or ノ\or ハ\or ヒ\or フ\or ヘ\or ホ\or マ\or ミ\or ム\or メ\or モ
-ヤor ユ\or ヨ\or ラ\or リ\or ル\or レ\or ロ\or ワ\or ヲ\or ン\else\@ctrerr\fi\relax}
+ヤ\or ユ\or ヨ\or ラ\or リ\or ル\or レ\or ロ\or ワ\or ヲ\or ン\else\@ctrerr\fi\relax}
+
+%--------------------------------------- ひらがな
+\def\kan@hiragana#1{%
+  \ifcase#1 \or あ\or い\or う\or え\or お\or か\or き
+\or く\or け\or こ\or さ\or し\or す\or せ\or そ
+\or た\or ち\or つ\or て\or と\or な\or に\or ぬ
+\or ね\or の\or は\or ひ\or ふ\or へ\or ほ\or ま\or み\or む\or め\or も
+や\or ゆ\or よ\or ら\or り\or る\or れ\or ろ\or わ\or を\or ん\else\@ctrerr\fi\relax}
 
 
 \newcommand*{\jkansuji}[1]{\Jkan@kurai@oku{#1}}
@@ -341,6 +349,7 @@
 \newcommand*{\jiroha}[1]{\kan@iroha{#1}}
 \newcommand*{\jIROHA}[1]{\kan@IROHA{#1}}
 \newcommand*{\jkatakana}[1]{\kan@katakana{#1}}
+\newcommand*{\jhiragana}[1]{\kan@hiragana{#1}}
 %--------------------------------------- all done
 \endinput
 %% EOF
