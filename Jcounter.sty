@@ -343,6 +343,11 @@
 \or ね\or の\or は\or ひ\or ふ\or へ\or ほ\or ま\or み\or む\or め\or も
 や\or ゆ\or よ\or ら\or り\or る\or れ\or ろ\or わ\or を\or ん\else\@ctrerr\fi\relax}
 
+%--------------------------------------- 甲乙
+\def\kan@kouotu#1{%
+  \ifcase#1 \or 甲\or 乙\or 丙\or 丁\or 戊\or 己\or 庚\or 辛
+  \or 壬\or 癸\else\@ctrerr\fi\relax}
+
 
 \newcommand*{\jkansuji}[1]{\Jkan@kurai@oku{#1}}
 \newcommand*{\jzenkakusuji}[1]{\kan@zenkakusuji{#1}}
@@ -350,6 +355,8 @@
 \newcommand*{\jIROHA}[1]{\kan@IROHA{#1}}
 \newcommand*{\jkatakana}[1]{\kan@katakana{#1}}
 \newcommand*{\jhiragana}[1]{\kan@hiragana{#1}}
+\newcommand*{\jkouotu}[1]{\kan@kouotu{#1}}
+
 %--------------------------------------- all done
 \endinput
 %% EOF
