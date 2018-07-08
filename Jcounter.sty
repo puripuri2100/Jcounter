@@ -4,7 +4,7 @@
 
 %% package declaration
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{jcounter}[2018/07/06 v0.1]
+\ProvidesPackage{jcounter}[2018/07/06 v0.3]
 \def\mk@pkgname{jcounter}
 
 
@@ -327,11 +327,20 @@
 \or あ\or さ\or き\or ゆ\or め\or み\or し\or ゑ\or ひ\or も\or せ\or す
 \or ん \else\@ctrerr\fi\relax}
 
+%--------------------------------------- カタカナ
+\def\kan@katakana#1{%
+  \ifcase#1 \or ア\or イ\or ウ\or エ\or オ\or カ\or キ
+\or ク\or ケ\or コ\or サ\or シ\or ス\or セ\or ソ
+\or タ\or チ\or ツ\or テ\or ト\or ナ\or ニ\or ヌ
+\or ネ\or ノ\or ハ\or ヒ\or フ\or ヘ\or ホ\or マ\or ミ\or ム\or メ\or モ
+ヤor ユ\or ヨ\or ラ\or リ\or ル\or レ\or ロ\or ワ\or ヲ\or ン\else\@ctrerr\fi\relax}
+
 
 \newcommand*{\jkansuji}[1]{\Jkan@kurai@oku{#1}}
 \newcommand*{\jzenkakusuji}[1]{\kan@zenkakusuji{#1}}
 \newcommand*{\jiroha}[1]{\kan@iroha{#1}}
 \newcommand*{\jIROHA}[1]{\kan@IROHA{#1}}
+\newcommand*{\jkatakana}[1]{\kan@katakana{#1}}
 %--------------------------------------- all done
 \endinput
 %% EOF
