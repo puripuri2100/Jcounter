@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{luatexja}
+\usepackage{jcounter}
+\begin{document}
+\section{漢数字}
+\verb|\jkansuji{算用数字}|で行うことができる。最大値は\LaTeX{}が扱える最大値の関係で\jkansuji{2147483647}となっている。実用上支障が出ることは少ないと思われる。
+
+\begin{table}[h]
+\centering
+    \begin{tabular}{ll}
+        入力&出力\\\hline
+        \verb|\jkansuji{1234}|&\jkansuji{1234}\\
+        \verb|\jkansuji{2147483647}|&\jkansuji{2147483647}
+    \end{tabular}
+\end{table}
+
+\section{全角数字}
+\verb|\jzenkakusuji{算用数字}|で行うことができる。最大値の制限はないはず。
+
+\begin{table}[h]
+\centering
+    \begin{tabular}{ll}
+        入力&出力\\\hline
+        \verb|\jzenkakusuji{1234}|&\jzenkakusuji{1234}\\
+        \verb|\jzenkakusuji{2147483647}|&\jzenkakusuji{2147483647}\\
+        \verb|\jzenkakusuji{9999999999}|&\jzenkakusuji{9999999999}
+    \end{tabular}
+\end{table}
+
+\section{いろは}
+いろは変換には2通りある。カタカナとひらがなである。
+
+\subsection{カタカナ}
+\verb|\jiroha{算用数字}|で行うことができる。最大値は48。「ン」までありますが、異論は認めません。
+
+\begin{table}[h]
+\centering
+    \begin{tabular}{ll}
+        入力&出力\\\hline
+        \verb|\jiroha{1}|&\jiroha{1}\\
+        \verb|\jiroha{48}|&\jiroha{48}
+    \end{tabular}
+\end{table}
+
+\subsection{ひらがな}
+\verb|\jiroha{算用数字}|で行うことができる。最大値は48。「ん」までありますが、異論は認めません。
+
+\begin{table}[htb]
+\centering
+    \begin{tabular}{ll}
+        入力&出力\\\hline
+        \verb|\jIROHA{1}|&\jIROHA{1}\\
+        \verb|\jIROHA{48}|&\jIROHA{48}
+    \end{tabular}
+\end{table}
+\end{document}
