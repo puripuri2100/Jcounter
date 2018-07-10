@@ -375,7 +375,7 @@
 \ifcase\kan@eto@juuni 亥\or 子\or 丑\or 寅\or 卯\or 辰\or 巳\or 午\or 未
 \or 申\or 酉\or 戌\else\@ctrerr\fi\relax}
 
-
+%--------------------------------------- 数値変換
 \newcommand*{\jkansuji}[1]{\Jkan@kurai@oku{#1}}
 \newcommand*{\jzenkakusuji}[1]{\kan@zenkakusuji{#1}}
 \newcommand*{\jiroha}[1]{\kan@iroha{#1}}
@@ -385,6 +385,17 @@
 \newcommand*{\jkouotu}[1]{\kan@kouotu{#1}}
 \newcommand*{\jzyunisi}[1]{\kan@zyunisi{#1}}
 \newcommand*{\jeto}[1]{\kan@eto{#1}}
+
+%--------------------------------------- カウンタ変換
+%\def\jckansuji#1{\expandafter\Jkan@kurai@oku\csname c@#1\endcsname}
+%\def\jczenkakusuji#1{\expandafter\kan@jc@zenkakusuji\csname c@#1\endcsname}
+\def\jciroha#1{\expandafter\kan@iroha\csname c@#1\endcsname}
+\def\jcIROHA#1{\expandafter\kan@IROHA\csname c@#1\endcsname}
+\def\jckatakana#1{\expandafter\kan@katakana\csname c@#1\endcsname}
+\def\jchiragana#1{\expandafter\kan@hiragana\csname c@#1\endcsname}
+\def\jckouotu#1{\expandafter\kan@kouotu\csname c@#1\endcsname}
+\def\jczyunisi#1{\expandafter\kan@zyunisi\csname c@#1\endcsname}
+%\def\jceto#1{\expandafter\kan@jc@eto\csname c@#1\endcsname}
 
 %--------------------------------------- all done
 \endinput
