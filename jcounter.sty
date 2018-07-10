@@ -307,6 +307,13 @@
 \expandafter\@tfor\expandafter\Num\expandafter:\expandafter=\@arg\do{\edef\@temp{\@temp\@nameuse{zen@\Num}}}%
 \@temp
 }
+%--------------------------------------- 全角数字カウンタ
+\def\kan@jc@zenkakusuji#1{\expandafter\@kan@jc@zenkakusuji\number#1@}
+\def\@kan@jc@zenkakusuji#1{%
+\if#1@\else
+\ifcase#1０\or １\or ２\or ３\or ４\or ５\or ６\or ７\or ８\or ９\fi
+\expandafter\@kan@jc@zenkakusuji
+\fi}
 
 %--------------------------------------- イロハ
 \def\kan@iroha#1{%
@@ -388,7 +395,7 @@
 
 %--------------------------------------- カウンタ変換
 %\def\jckansuji#1{\expandafter\Jkan@kurai@oku\csname c@#1\endcsname}
-%\def\jczenkakusuji#1{\expandafter\kan@jc@zenkakusuji\csname c@#1\endcsname}
+\def\jczenkakusuji#1{\expandafter\kan@jc@zenkakusuji\csname c@#1\endcsname}
 \def\jciroha#1{\expandafter\kan@iroha\csname c@#1\endcsname}
 \def\jcIROHA#1{\expandafter\kan@IROHA\csname c@#1\endcsname}
 \def\jckatakana#1{\expandafter\kan@katakana\csname c@#1\endcsname}
